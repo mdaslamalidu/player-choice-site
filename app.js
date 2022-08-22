@@ -36,9 +36,8 @@ function getName(element){
     element.setAttribute('class', 'disabled btn');
 }
 
-
 // common function 1
-function getInputValue(inputId){
+function getInputValue(inputId) {
     const totalCost = document.getElementById(inputId).value;
     const totalCostNumber = parseInt(totalCost);
     return totalCostNumber;
@@ -46,11 +45,13 @@ function getInputValue(inputId){
 
 
 // common function 2
-function perPlayerCostCalculete(){
-    const perPlayerCost = getNumberValue('player-cost');
+function perPlayerCostCalculete() {
+    const perPlayerCost = getInputValue('player-cost');
     const totalPerPalyerCost = perPlayerCost * PlayerList.length;
     return totalPerPalyerCost;
 }
+
+
 
 // common function 3
 function inputValueById(id){
@@ -71,17 +72,17 @@ document.getElementById("calculate-btn").addEventListener("click", function(){
 
 document.getElementById("total-calculate-btn").addEventListener('click', function(){
 
-    const managerValue = getInputValue('manager-cost');
-    const coachValue = getInputValue('coach-cost');
-    const totalCalcuateNumber = totalCalcuate();
+    const managerCost = getInputValue('manager-cost');
+    const coachCost = getInputValue('coach-cost');
+    const totalPerPlayerCostCalculate = perPlayerCostCalculete();
     const totalExpense = document.getElementById("total-expense");
-    const finalCostNumber = managerValue + coachValue + totalCalcuateNumber;
-    if (isNaN(managerValue) || isNaN(coachValue)){
+    const getFinalCost = managerCost + coachCost + totalPerPlayerCostCalculate;
+    if (isNaN(managerCost) || isNaN(coachCost)){
         alert("Enter a Number")
         return;
     }
-    totalExpense.innerText = `$${finalCostNumber}`;
+    totalExpense.innerText = `$${getFinalCost}`;
     inputValueById('manager-cost')
     inputValueById('coach-cost')
-    inputValueById('total-cost')
+    inputValueById('player-cost')
 })
