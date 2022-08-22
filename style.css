@@ -1,0 +1,81 @@
+header {
+    background-color: black;
+    color: white;
+}
+
+.header-text {
+    color: #FF5E19;
+    font-size: 69px;
+    font-weight: 700;
+}
+
+.player-section {
+    background-color: #252526;
+    padding: 50px 0px;
+}
+
+.selected{
+    background: black;
+    color: white;
+    height: 351px;
+    border-radius: 5px;
+    /* width: 24%;
+    margin: 5px; */
+} 
+
+.selected-player{
+    padding: 10px 0px;
+}
+
+.select-price{
+    height: 491px;
+    padding: 10px 15px;
+}
+
+#tbody td {
+    padding: 14px 10px;
+}
+
+.calculate-section {
+    background: black;
+    color: white;
+    padding: 20px 20px;
+}
+
+input {
+    width: 44%;
+    margin-left: 9px;
+    background: black;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 7px;
+}
+
+h2 {
+    font-size: 22px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+.btn {
+    width: 100%;
+    background: blueviolet;
+    padding: 10px 0px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.cost-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.bgColor {
+    background-color: black;
+    color: white;
+}
