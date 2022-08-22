@@ -38,7 +38,7 @@ function getName(element){
 
 
 // common function 1
-function getNumberValue(inputId){
+function getInputValue(inputId){
     const totalCost = document.getElementById(inputId).value;
     const totalCostNumber = parseInt(totalCost);
     return totalCostNumber;
@@ -71,8 +71,8 @@ document.getElementById("calculate-btn").addEventListener("click", function(){
 
 document.getElementById("total-calculate-btn").addEventListener('click', function(){
 
-    const managerValue = getNumberValue('manager-cost');
-    const coachValue = getNumberValue('coach-cost');
+    const managerValue = getInputValue('manager-cost');
+    const coachValue = getInputValue('coach-cost');
     const totalCalcuateNumber = totalCalcuate();
     const totalExpense = document.getElementById("total-expense");
     const finalCostNumber = managerValue + coachValue + totalCalcuateNumber;
