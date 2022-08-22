@@ -46,10 +46,10 @@ function getNumberValue(inputId){
 
 
 // common function 2
-function totalCalcuate(){
-    const totalCostNumber = getNumberValue('total-cost');
-    const finalCost = totalCostNumber * listPlayer.length;
-    return finalCost;
+function perPlayerCostCalculete(){
+    const perPlayerCost = getNumberValue('player-cost');
+    const totalPerPalyerCost = perPlayerCost * PlayerList.length;
+    return totalPerPalyerCost;
 }
 
 // common function 3
@@ -59,11 +59,11 @@ function inputValueById(id){
 
 
 document.getElementById("calculate-btn").addEventListener("click", function(){
-    if (isNaN(totalCalcuate())) {
+    if (isNaN(perPlayerCostCalculete())) {
         alert("Enter a Number")
         return;
     }
-    const finalCost = totalCalcuate()
+    const finalCost = perPlayerCostCalculete()
     const playerExpense = document.getElementById("player-expense");
     playerExpense.innerText = `$${finalCost}`
 })
