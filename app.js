@@ -1,11 +1,6 @@
 const PlayerList = []
 
 function getPlayerList(nameList){
-    if (PlayerList.length > 5) {
-        alert("You can't select more than five")
-        return;
-    }
-
     const tbody = document.getElementById("tbody")
     tbody.innerHTML = "";
     for (let i = 0; i < nameList.length; i++){
@@ -25,12 +20,13 @@ function getName(element){
         playerName: name
     }
 
-    PlayerList.push(nameObj)
-    getPlayerList(PlayerList)
-
-    if (PlayerList.length > 5) {
+    if (PlayerList.length >= 5) {
+        alert("you can't select more than five");
         return;
     }
+
+    PlayerList.push(nameObj)
+    getPlayerList(PlayerList)
 
     element.setAttribute("style", "background:red")
     element.setAttribute('class', 'disabled btn');
