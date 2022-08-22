@@ -1,42 +1,39 @@
+const PlayerList = []
 
-const listPlayer = []
-
-function nameList(name){
-
-    if (listPlayer.length > 5) {
-        alert("huge")
+function getPlayerList(nameList){
+    if (PlayerList.length > 5) {
+        alert("You can't select more than five")
         return;
     }
- 
+
     const tbody = document.getElementById("tbody")
     tbody.innerHTML = "";
-   for(let i = 0; i < name.length; i++){
-        const myname = name[i].playerName;
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td class="mr-3">${i + 1}.</td>
-            <td> ${myname}</td>
-        `
-        tbody.appendChild(tr)
-   }
+    for (let i = 0; i < nameList.length; i++){
+        const name = nameList[i].playerName;
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${i + 1}.</td>
+                <td>${name}</td>
+            `
+            tbody.appendChild(tr)
+    }
 }
 
 function getName(element){
     const name = element.parentNode.children[0].innerText;
-   
     const nameObj = {
         playerName: name
     }
-    listPlayer.push(nameObj)
-    nameList(listPlayer)
 
-    if (listPlayer.length > 5) {
+    PlayerList.push(nameObj)
+    getPlayerList(PlayerList)
+
+    if (PlayerList.length > 5) {
         return;
     }
+
     element.setAttribute("style", "background:red")
     element.setAttribute('class', 'disabled btn');
-
-
 }
 
 
@@ -69,8 +66,8 @@ document.getElementById("calculate-btn").addEventListener("click", function(){
     const finalCost = totalCalcuate()
     const playerExpense = document.getElementById("player-expense");
     playerExpense.innerText = `$${finalCost}`
-
 })
+
 
 document.getElementById("total-calculate-btn").addEventListener('click', function(){
 
